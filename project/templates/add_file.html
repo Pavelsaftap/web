@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Загрузить</title>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  	<a class="navbar-brand" href="#">Название сего чуда потом придумаю</a>
+
+  	<div class="collapse navbar-collapse" id="navbar1">
+    	<ul class="navbar-nav mr-auto">
+      		<li class="nav-item">
+		  <a class="nav-link" href="/index">Новости<span class="sr-only"></span></a>
+      		</li>
+		<li class="nav-item active">
+		    <a class="nav-link" href="/add_file">Загрузка файлов</a>
+		</li>
+      		<li class="nav-item">
+		    <a class="nav-link" href="/files">Мои файлы</a>
+		</li>
+    	</ul>
+  	</div>
+	{% if "username" in session %}
+          <div>
+            <p style="margin-bottom: 5px; color: #ffffff">{{session['username']}}</p>
+            <a class="navbar-brand" href="/logout" style="font-size:15px; margin-top:-10px; color: #3EE1F8;">Выйти</a>
+          </div>
+        {% endif %}
+    </nav>
+</head>
+  <body>
+    <!-- Begin page content -->
+    <main role="main" class="container">
+    <h3>Загрузить новый файл</h3>
+    <form action="" method=post enctype=multipart/form-data>
+      <p><input type=file name=file></p>
+        <input type=submit value="Загрузить">
+    </form>
+
+    </main>
+  </body>
+</html>

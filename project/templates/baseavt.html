@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>{{title}}</title>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  	<a class="navbar-brand" href="#">Название сего чуда потом придумаю</a>
+
+  	<div class="collapse navbar-collapse" id="navbar1">
+    	<ul class="navbar-nav mr-auto">
+      		<li class="nav-item active">
+		  <a class="nav-link" href="#">Новости<span class="sr-only"></span></a>
+      		</li>
+		<li class="nav-item">
+		    <a class="nav-link" href="#">Загрузка файлов</a>
+		</li>
+      		<li class="nav-item dropdown">
+        		<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Мои файлы</a>
+        		<div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+          			<a class="dropdown-item" href="#">1</a>
+          			<a class="dropdown-item" href="#">2</a>
+          			<div class="dropdown-divider"></div>
+          			<a class="dropdown-item" href="#">3</a>
+        		</div>
+      		</li>
+    	</ul>
+  	</div>
+	{% if "username" in session %}
+          <div>
+            <p style="margin-bottom: 5px; color: #ffffff">{{session['username']}}</p>
+            <a class="navbar-brand" href="/logout" style="font-size:15px; margin-top:-10px; color: #3EE1F8;">Выйти</a>
+          </div>
+        {% endif %}
+    </nav>
+</head>
+  <body>
+    <!-- Begin page content -->
+    <main role="main" class="container">
+        {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>
+
